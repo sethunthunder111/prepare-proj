@@ -1,0 +1,37 @@
+{
+  "name": "prepare-proj",
+  "version": "1.0.0",
+  "description": "Zips a folder excluding node_modules",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js", 
+    "build": "pkg . --targets node18-win-x64,node18-linux-x64,node18-macos-x64",
+    "build:win": "pkg . --targets node18-win-x64 -o prepareProj-win.exe", 
+    "build:linux": "pkg . --targets node18-linux-x64 -o prepareProj-linux",
+    "build:macos": "pkg . --targets node18-macos-x64 -o prepareProj-macos"
+  },
+  "bin": {
+    "prepareProj": "./index.js"
+  },
+  "keywords": [
+    "zip",
+    "archive",
+    "cli",
+    "node_modules"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^6.0.0", 
+    "yargs": "^17.7.2"  
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1" 
+  },
+  "pkg": {
+    "scripts": "index.js",
+    "assets": [],        
+    "outputPath": "dist" 
+  }
+}
